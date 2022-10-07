@@ -136,6 +136,12 @@
     <addaction name="actionIssue"/>
     <addaction name="actionDocumentation"/>
    </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionDiff"/>
+   </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
      <string>Edit</string>
@@ -184,6 +190,7 @@
    <addaction name="menuView"/>
    <addaction name="menuWindows"/>
    <addaction name="menuDebug"/>
+   <addaction name="menuTools"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -863,6 +870,11 @@
   <action name="actionManageLayouts">
    <property name="text">
     <string>Manage layouts</string>
+   </property>
+  </action>
+  <action name="actionDiff">
+   <property name="text">
+    <string>Diff With File..</string>
    </property>
   </action>
  </widget>
