@@ -111,3 +111,8 @@ Show Cross References
 
 **Shortcut:** :kbd:`X`
 
+Refresh
+----------------------------------------
+**Description:** Reloads the Disassembler, Hexdump, and Decompiler views. It also reloads breakpoints.
+
+**Steps:** Right-click on an item and choose ``Refresh``  

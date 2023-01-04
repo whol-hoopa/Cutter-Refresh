@@ -33,6 +33,8 @@ private slots:
     void aboutToShowSlot();
     void aboutToHideSlot();
 
+    void on_actionRefresh();
+
     void on_actionEditFunction_triggered();
     void on_actionEditInstruction_triggered();
     void on_actionNopInstruction_triggered();
@@ -99,6 +101,8 @@ private:
     IOModesController ioModesController;
 
     QList<QAction *> anonymousActions;
+
+    QAction actionRefresh;
 
     QMenu *editMenu;
     QAction actionEditInstruction;

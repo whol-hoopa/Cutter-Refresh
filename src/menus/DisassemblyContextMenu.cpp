@@ -65,6 +65,8 @@ DisassemblyContextMenu::DisassemblyContextMenu(QWidget *parent, MainWindow *main
       actionSetToDataWord(this),
       actionSetToDataDword(this),
       actionSetToDataQword(this),
+      actionRefresh(this),
+
       showInSubmenu(this)
 {
     initAction(&actionCopy, tr("Copy"), SLOT(on_actionCopy_triggered()), getCopySequence());
@@ -109,6 +111,9 @@ DisassemblyContextMenu::DisassemblyContextMenu(QWidget *parent, MainWindow *main
     initAction(&actionAnalyzeFunction, tr("Define function here"),
                SLOT(on_actionAnalyzeFunction_triggered()), getDefineNewFunctionSequence());
     addAction(&actionAnalyzeFunction);
+
+    initAction(&actionRefresh, tr("Refresh"), SLOT(on_actionRefresh()));
+    addAction(&actionRefresh);
 
     addSeparator();
 
@@ -684,6 +689,11 @@ QKeySequence DisassemblyContextMenu::getEditFunctionSequence() const
 QKeySequence DisassemblyContextMenu::getUndefineFunctionSequence() const
 {
     return { Qt::Key_U };
+}
+
+void DisassemblyContextMenu::on_actionRefresh()
+{
+    emit Core()->refreshCodeViews();
 }
 
 void DisassemblyContextMenu::on_actionEditInstruction_triggered()
